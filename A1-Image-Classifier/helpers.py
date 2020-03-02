@@ -40,7 +40,7 @@ def standardize_input(image, width, height):
     # cv2.resize
     
     dim=(width,height)
-    standard_im=cv2.resize(image,dim)
+    standard_im=cv2.resize(image,dim,interpolation=cv2.INTER_AREA)
     
     return standard_im
 
@@ -71,7 +71,7 @@ def standardize(image_list):
         
         
         # Standardize the image
-        imageStandard=standardize_input(item[0], 1024,737)
+        imageStandard=standardize_input(item[0], 1100,600)
         
         # Create a numerical label
         numerical_Label=encode(item[1])
