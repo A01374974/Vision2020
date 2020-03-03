@@ -21,7 +21,7 @@ def load_dataset(image_dir):
         for file in glob.glob(os.path.join(image_dir, im_type, "*")):
             
             # Read in the image
-            im = cv2.imread(file)
+            im = cv2.imread(file, cv2.COLOR_BGR2RGB)
             
             # Check if the image exists/if it's been correctly read-in
             if not im is None:
